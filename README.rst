@@ -1,0 +1,4 @@
+textmining
+----------
+
+    >>> import textmining

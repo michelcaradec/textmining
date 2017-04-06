@@ -1,0 +1,3 @@
+include README.rst
+include textmining/assets/firstnames.txt
+include textmining/assets/stopwords_french.txt
