@@ -2,6 +2,8 @@
 
 Tiny text mining package for Python.
 
+See [textmining-dataprep](https://github.com/michelcaradec/textmining-dataprep) repository for details on data preparation.
+
 ## Setup
 
 ```bash
