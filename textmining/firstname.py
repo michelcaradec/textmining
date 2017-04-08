@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
+import os
 import codecs
 from singleton import Singleton
 import tm
@@ -13,7 +14,7 @@ class FirstName(Singleton):
     """
     def __init__(self):
         self.__firstnames = None
-        self.__filename = "assets/firstnames.txt"
+        self.__filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets/firstnames.txt")
         self.__encoding = "utf-8"
 
 

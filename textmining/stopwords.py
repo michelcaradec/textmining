@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
+import os
 import codecs
 from singleton import Singleton
 import tm
@@ -12,7 +13,7 @@ class StopWords(Singleton):
     StopWords class.
     """
     def __init__(self):
-        self.__filename = "assets/stopwords_french.txt"
+        self.__filename = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets/stopwords_french.txt")
         self.__encoding = "utf-8"
         self.__stopwords = None
 
