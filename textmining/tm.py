@@ -57,7 +57,10 @@ def is_gender(gender, clean_token=True):
     2 = female
     3 = used for both
     """
-    return lambda token: token if FirstName.get_singleton().get_gender(token, clean_token) == gender else None
+    return lambda token: \
+        token \
+        if FirstName.get_singleton().get_gender(token, clean_token) == gender \
+        else None
 
 
 def substitute_accents(text):

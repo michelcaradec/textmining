@@ -110,12 +110,12 @@ Output:
 from firsname import FirstName
 
 for firstname in [u"Mathilde", u"Gaëlle", u"Grégory", u"Yann"]:
-	FirstName.get_singleton().get_gender(firstname)
+	print "%s: %s" % (firstname, FirstName.get_singleton().get_gender_confidence(firstname))
 ```
 
 Output:
 
-	Mathilde: 3
-	Gaëlle: 2
-	Grégory: 1
-	Yann: 3
+	Mathilde: (2, 0.9991225231056928)
+	Gaëlle: (2, 1.0)
+	Grégory: (1, 1.0)
+	Yann: (1, 0.9993874425727411)

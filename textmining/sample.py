@@ -36,6 +36,7 @@ def firstname_demo():
     instance = FirstName.get_singleton()
     print instance.is_firstname(u"Michel")
     print instance.get_gender(u"Yann")
+    print instance.get_gender_confidence(u"Yann")
 
 
 def tokenize_firstname_demo():
