@@ -32,11 +32,34 @@ def firstname_demo():
     for firstname in [u"Mathilde", u"Gaëlle", u"Grégory", u"Rennes", u"Yann"]:
         print "%s is %sa first name." % (firstname, "" if tm.is_firstname(firstname) else "not ")
 
-    # Check singleton: first names will only be loaded once.
+    # Singleton mechanism make first name asset is loaded once.
     instance = FirstName.get_singleton()
     print instance.is_firstname(u"Michel")
-    print instance.get_gender(u"Yann")
+
+    # Exclusion list (used to exclude ambiguous first names)
+    print instance.is_firstname(u"France")
+    instance.set_exclusion_list([u"France"])
+    print instance.get_exclusion_list()
+    print instance.is_firstname(u"France")
+
+    # Confidence threshold (used to exclude uncertain first names)
     print instance.get_gender_confidence(u"Yann")
+    FirstName.get_singleton().confidence_threshold = 1
+    print instance.is_firstname(u"Yann")
+
+    # Count threshold (used to exclude rare first names)
+    info = instance.get_info(u"Framboise")
+    print info.count
+    FirstName.get_singleton().count_threshold = info.count + 1
+    print instance.is_firstname(u"Framboise")
+
+    # Year threshold (used to exclude old first names)
+    info = instance.get_info(u"Leoncine")
+    print info.year
+    FirstName.get_singleton().count_threshold = info.year + 1
+    print instance.is_firstname(u"Leoncine")
+
+    instance.reset_thresholds()
 
 
 def tokenize_firstname_demo():

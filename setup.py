@@ -6,7 +6,7 @@ from setuptools import setup
 
 
 setup(name="textmining",
-      version="0.2",
+      version="0.3",
       description="Tiny text mining package",
       url="https://github.com/michelcaradec/textmining",
       author="Michel Caradec",
