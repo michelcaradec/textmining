@@ -12,7 +12,7 @@ pip install textmining
 
 ## Usage
 
-See also [sample.py](sample.py) source file.
+See also [sample.py](textmining/sample.py) source file.
 
 ### Tokenization
 
