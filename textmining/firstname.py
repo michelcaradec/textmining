@@ -4,8 +4,8 @@
 
 import os
 import codecs
+import utils
 from singleton import Singleton
-import tm
 from firstnameinfo import FirstNameInfo
 
 
@@ -66,7 +66,7 @@ class FirstName(Singleton):
         First name cleaning.
         Remove accents, convert to lower case.
         """
-        return tm.to_lower(tm.substitute_accents(token))
+        return utils.to_lower(utils.substitute_accents(token))
 
 
     def reset_thresholds(self):
@@ -101,7 +101,7 @@ class FirstName(Singleton):
         self.__ensure_loaded()
 
         token = self.__clean_firstname(token) if clean_token else token
-        info = self.__firstnames.get(token) if token not in self.__exclusion else None
+        info = None if token in self.__exclusion else self.__firstnames.get(token)
 
         return info \
             if info \

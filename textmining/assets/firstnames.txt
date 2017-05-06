@@ -2366,7 +2366,6 @@ anoha				21
 anoir	1974	131		
 anojan		29		
 anoki		30		
-anonyme	1963	316	1958	197
 anor				66
 anouar	2015	1695		
 anouch				89

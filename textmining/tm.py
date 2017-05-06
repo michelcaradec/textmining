@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-from unidecode import unidecode
+import utils
 from stopwords import StopWords
 from firstname import FirstName
 from tokenizer import Tokenizer
@@ -33,7 +33,7 @@ def to_lower(token):
     """
     Token to lower case.
     """
-    return token.lower() if token else None
+    return utils.to_lower(token)
 
 
 def min_len(length):
@@ -67,7 +67,7 @@ def substitute_accents(text):
     """
     Replace accents by corresponding ASCII characters.
     """
-    return unidecode(text).encode("ascii")
+    return utils.substitute_accents(text)
 
 
 def tokenize(text, split_on_dash=True):

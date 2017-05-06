@@ -83,3 +83,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # TODO: check perf with pickle to serialize fistnames dict
